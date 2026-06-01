@@ -14,7 +14,7 @@ import sys
 # submodule 로 추가한 common 레포 경로를 import path 에 추가
 sys.path.append(os.path.join(os.path.dirname(__file__), "common"))
 
-from metrics import accuracy, precision, recall, f1  # noqa: E402
+from metrics import accuracy, precision, recall, f1, hit_rate  # noqa: E402
 
 
 def main():
@@ -29,6 +29,7 @@ def main():
     print(f"precision : {precision(y_true, y_pred):.3f}")
     print(f"recall    : {recall(y_true, y_pred):.3f}")
     print(f"f1        : {f1(y_true, y_pred):.3f}")
+    print(f"hit_rate  : {hit_rate(y_true, y_pred):.3f}")
 
 
 if __name__ == "__main__":
